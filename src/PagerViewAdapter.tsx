@@ -36,6 +36,7 @@ export default function PagerViewAdapter<T extends Route>({
   keyboardDismissMode = 'auto',
   swipeEnabled = true,
   navigationState,
+  disableAnimationForSetPage,
   onIndexChange,
   onSwipeStart,
   onSwipeEnd,
@@ -63,7 +64,11 @@ export default function PagerViewAdapter<T extends Route>({
       (route: { key: string }) => route.key === key
     );
 
-    pagerRef.current?.setPageWithoutAnimation(index);
+    if (disableAnimationForSetPage === true) {
+      pagerRef.current?.setPageWithoutAnimation(index);
+    } else {
+      pagerRef.current?.setPage(index);
+    }
   }, []);
 
   React.useEffect(() => {
@@ -72,7 +77,11 @@ export default function PagerViewAdapter<T extends Route>({
     }
 
     if (indexRef.current !== index) {
-      pagerRef.current?.setPageWithoutAnimation(index);
+      if (disableAnimationForSetPage === true) {
+        pagerRef.current?.setPageWithoutAnimation(index);
+      } else {
+        pagerRef.current?.setPage(index);
+      }
     }
   }, [keyboardDismissMode, index]);
 

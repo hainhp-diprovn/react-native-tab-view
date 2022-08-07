@@ -35,6 +35,7 @@ export declare type EventEmitterProps = {
 export declare type PagerProps = Omit<PagerViewProps, 'initialPage' | 'scrollEnabled' | 'onPageScroll' | 'onPageSelected' | 'onPageScrollStateChanged' | 'keyboardDismissMode' | 'children'> & {
     keyboardDismissMode?: 'none' | 'on-drag' | 'auto';
     swipeEnabled?: boolean;
+    disableAnimationForSetPage?: boolean;
     onSwipeStart?: () => void;
     onSwipeEnd?: () => void;
 };

@@ -53,6 +53,7 @@ export type PagerProps = Omit<
 > & {
   keyboardDismissMode?: 'none' | 'on-drag' | 'auto';
   swipeEnabled?: boolean;
+  disableAnimationForSetPage?: boolean;
   onSwipeStart?: () => void;
   onSwipeEnd?: () => void;
 };

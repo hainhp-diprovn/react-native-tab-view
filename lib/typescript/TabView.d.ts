@@ -22,4 +22,4 @@ export declare type Props<T extends Route> = PagerProps & {
     sceneContainerStyle?: StyleProp<ViewStyle>;
     style?: StyleProp<ViewStyle>;
 };
-export default function TabView<T extends Route>({ onIndexChange, navigationState, renderScene, initialLayout, keyboardDismissMode, lazy, lazyPreloadDistance, onSwipeStart, onSwipeEnd, renderLazyPlaceholder, renderTabBar, sceneContainerStyle, style, swipeEnabled, tabBarPosition, }: Props<T>): JSX.Element;
+export default function TabView<T extends Route>({ onIndexChange, navigationState, renderScene, initialLayout, keyboardDismissMode, lazy, lazyPreloadDistance, onSwipeStart, onSwipeEnd, renderLazyPlaceholder, renderTabBar, sceneContainerStyle, style, swipeEnabled, tabBarPosition, disableAnimationForSetPage, }: Props<T>): JSX.Element;
